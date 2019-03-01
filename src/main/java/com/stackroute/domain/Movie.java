@@ -3,6 +3,11 @@ package com.stackroute.domain;
 public class Movie {
     private Actor oneActor;
 
+    // Constructor Injection
+    public Movie(Actor oneActor) {
+        this.oneActor = oneActor;
+    }
+
     public Actor getOneActor() {
         return oneActor;
     }
