@@ -1,7 +1,7 @@
-package com.stackroute.domain;
+package com.stackroute;
 
+import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
@@ -18,6 +18,7 @@ public class Main {
     public static void main(String[] args) {
 
      ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+     ((ClassPathXmlApplicationContext) context).registerShutdownHook();
 
      Movie m1 = context.getBean("movie1",Movie.class);
      m1.setApplicationContext(context);
