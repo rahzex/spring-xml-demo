@@ -31,5 +31,6 @@
     </bean>
 
     <bean class="com.stackroute.demo.BeanLifeCycleDemoBean" init-method="customInit" destroy-method="customDestroy"/>
+    <bean class="com.stackroute.demo.BeanPostProcessorDemoBean" />
 
 </beans>

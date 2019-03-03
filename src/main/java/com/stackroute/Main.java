@@ -17,15 +17,15 @@ import org.springframework.core.io.ClassPathResource;
 public class Main {
     public static void main(String[] args) {
 
-     ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-     ((ClassPathXmlApplicationContext) context).registerShutdownHook();
+        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
 
-     Movie m1 = context.getBean("movie1",Movie.class);
-     m1.setApplicationContext(context);
+        Movie m1 = context.getBean("movie1",Movie.class);
+        m1.setApplicationContext(context);
 
-     XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
-     m1.setBeanFactory(factory);
-     m1.setBeanName("Movie 1 Bean");
+        XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
+        m1.setBeanFactory(factory);
+        m1.setBeanName("Movie 1 Bean");
         System.out.println("\nMovie 1 is : "+ m1);
     }
 }
